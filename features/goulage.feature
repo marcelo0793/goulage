@@ -13,3 +13,8 @@ Scenario: Tira 5, esta en pos 5
 Given Se abre el juego
 When Tira 5
 Then Esta en la posicion 5
+
+Scenario: Tira 6, gano
+Given Se abre el juego
+When Tira 6
+Then Tiene el estado "Ganaste"

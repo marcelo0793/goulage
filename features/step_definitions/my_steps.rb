@@ -11,6 +11,11 @@ When(/^Tira (\d+)$/) do |numeroDado|
 	click_button( "tirarDado")
 end
 
+Then(/^Tiene el estado "(.*?)"$/) do |estado|
+  last_response.body.should =~ /#{estado}/m
+end
+
+
 
 
 

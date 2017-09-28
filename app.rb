@@ -10,6 +10,8 @@ end
 post '/dado' do
 	@@juego.tirarDado
 	@pos = @@juego.pos
+	@estado = @@juego.estado	
+
   erb :goulage
 end
 
