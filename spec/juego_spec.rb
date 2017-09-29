@@ -57,5 +57,4 @@ describe "Juego" do
 		juego.posA.should == 5
 
 	end
-
 end
