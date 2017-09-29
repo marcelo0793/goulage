@@ -41,7 +41,20 @@ describe "Juego" do
 		juego = Juego.new
 		juego.tirarDado
 		juego.tirarDado
-		juego.posB.should_not == 0
+		juego.posB.should > 0
+
+	end
+
+	it "Si la posicion de A es mayo a 6, rebota" do
+
+		juego = Juego.new
+		juego.forzarDado 3
+		juego.tirarDado
+		juego.forzarDado 1
+		juego.tirarDado
+		juego.forzarDado 5
+		juego.tirarDado
+		juego.posA.should == 4
 
 	end
 

@@ -5,8 +5,16 @@ class Juego
 		@posA = 0
 		@posB = 0
 		@proximo = 0
+
+		@valorDado = 0
+		@largoTablero = 6
+
 		@turno = "A"
 		@estado = "Juega A"
+
+		@tableroA = "_ _ _ _ _ _ _"
+		@tableroB = "_ _ _ _ _ _ _"
+
 	end
 
 	def pos
@@ -19,6 +27,18 @@ class Juego
 
 	def posB
 		@posB
+	end
+
+	def largoTablero
+		@largoTablero
+	end
+
+	def posVirtualA
+		@posVirtualA = @posA
+	end
+
+	def posVirtualB
+		@posVirtualB = @posB
 	end
 
 	def estado
@@ -34,21 +54,27 @@ class Juego
 	end
 	
 	def tirarDado
-		
+
 	if @turno == "A"
 		if @proximo == 0
-			@posA += Random.rand 1..6
+			@valorDado = Random.rand 1..6
 		else
-			@posA += @proximo
+			@valorDado = @proximo
 		end
+
+		hacerRebote
+
 		@turno = "B"
 		@estado = "Juega B"
 	else
 		if @proximo == 0
-			@posB += Random.rand 1..6
+			@valorDado = Random.rand 1..6
 		else
-			@posB += @proximo
+			@valorDado = @proximo
 		end
+	
+		hacerRebote
+
 		@turno = "A"
 		@estado = "Juega A"
 	end 
@@ -57,11 +83,33 @@ class Juego
 
 	end
 
+	def hacerRebote 
+		
+		if @turno == "A"
+			@posVirtualA = @posA + @valorDado
+				if @posVirtualA > @largoTablero
+					@posA = @largoTablero - ( @posVirtualA - @largoTablero )
+									
+				else
+					@posA = @posVirtualA
+				end   	
+		else
+			@posVirtualB = @posB + @valorDado
+				if @posVirtualB > @largoTablero
+					@posB = @largoTablero - ( @posVirtualB - @largoTablero )
+								
+				else
+					@posB = @posVirtualB  	
+				end
+		end
+
+	end
+
 	def validarGanador
-		if @posA >= 6
+		if @posA == @largoTablero
 			@estado = "Gano A"
 		else
-			if @posB >= 6
+			if @posB == @largoTablero
 				@estado = "Gano B"
 			end
 		end
