@@ -12,8 +12,8 @@ class Juego
 		@turno = "A"
 		@estado = "Juega A"
 
-		@tableroA = "_ _ _ _ _ _ _"
-		@tableroB = "_ _ _ _ _ _ _"
+		@tableroA = "A _ _ _ _ _ _"
+		@tableroB = "B _ _ _ _ _ _"
 
 	end
 
@@ -47,6 +47,14 @@ class Juego
 
 	def turno
 		@turno
+	end
+
+	def tableroA
+		@tableroA
+	end
+
+	def tableroB
+		@tableroB
 	end
 
 	def forzarDado numero

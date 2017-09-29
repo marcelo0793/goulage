@@ -6,8 +6,8 @@ get '/' do
 	@posA = @@juego.posA
 	@posB = @@juego.posB
 	@estado = @@juego.estado
-	@tableroA= "A _ _ _ _ _ _"	
-	@tableroB= "B _ _ _ _ _ _"		
+	@tableroA= @@juego.tableroA
+	@tableroB= @@juego.tableroB		
   	erb :goulage
 end
 
