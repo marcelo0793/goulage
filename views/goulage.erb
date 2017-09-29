@@ -1,10 +1,10 @@
-<h1>Jugador A está en la posición <%= @posA %><h1/>
-<h1>Jugador B está en la posición <%= @posB %><h1/>
+<h3>Jugador A está en la posición <%= @posA %><h1/>
+<h3>Jugador B está en la posición <%= @posB %><h1/>
 
-<p><%= @tableroA %></p>
-<p><%= @tableroB %></p>
+<p style="color:green"><%= @tableroA %></p>
+<p style="color:red"><%= @tableroB %></p>
 
-<h1> <%= @estado %><h1/>
+<h1 style="color:blue"> <%= @estado %><h1/>
 <form method="post" action="/dado">
 	<input type="submit" value="tirarDado"/>
 </form>
