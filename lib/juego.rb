@@ -5,6 +5,7 @@ class Juego
 		@posA = 0
 		@posB = 0
 		@proximo = 0
+		@turno = "A"
 		@estado = "Juega A"
 	end
 
@@ -24,25 +25,34 @@ class Juego
 		@estado
 	end
 
+	def turno
+		@turno
+	end
+
 	def forzarDado numero
 		@proximo = numero
 	end
 	
 	def tirarDado
+		
+	if @turno == "A"
 		if @proximo == 0
 			@posA += Random.rand 1..6
 		else
 			@posA += @proximo
 		end
-		
-		tirarDadoB
+		@turno = "B"
+	else
+		if @proximo == 0
+			@posB += Random.rand 1..6
+		else
+			@posB += @proximo
+		end
+		@turno = "A"
+	end 
 
 		validarGanador
 
-	end
-
-	def tirarDadoB
-		@posB += Random.rand 1..6
 	end
 
 	def validarGanador

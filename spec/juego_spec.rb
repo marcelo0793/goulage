@@ -28,11 +28,20 @@ describe "Juego" do
 
 	end
 
-	it "Si tiro un dado, aumenta tambien la posicion de B" do
+	it "Si es el turno de A, tira los doados y le toca a B" do
 
 		juego = Juego.new
 		juego.tirarDado
-		juego.posB.should_not == 0 
+		juego.turno.should == "B"
+
+	end
+
+	it "Si tira A, cambia la pos de A. Y despues tira B, cambia la pos de B" do
+
+		juego = Juego.new
+		juego.tirarDado
+		juego.tirarDado
+		juego.posB.should_not == 0
 
 	end
 
