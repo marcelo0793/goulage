@@ -17,9 +17,26 @@ When(/^Jugador A tira (\d+)$/) do |numeroDado|
    click_button("tirarDado")
 end
 
+When(/^Jugador B tira (\d+)$/) do |numeroDado|
+   @@juego.forzarDado numeroDado.to_i
+   click_button("tirarDado")
+end
+
+
 Then(/^Muestra el mensaje "(.*?)"$/) do |estado|
   last_response.body.should =~ /#{estado}/m
 end
+
+Then(/^Muestra el tableroA "(.*?)"$/) do |tablero|
+  last_response.body.should =~ /#{tablero}/m
+end
+
+Then(/^Muestra el tableroB "(.*?)"$/) do |tablero|
+  last_response.body.should =~ /#{tablero}/m
+end
+
+
+
 
 
 
