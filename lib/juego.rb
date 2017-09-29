@@ -12,8 +12,8 @@ class Juego
 		@turno = "A"
 		@estado = "Juega A"
 
-		@tableroA = "A _ _ _ _ _ _ _"
-		@tableroB = "B _ _ _ _ _ _ _"
+		@tableroA = "|A|_|_|_|_|_|_|_|"
+		@tableroB = "|B|_|_|_|_|_|_|_|"
 
 	end
 
@@ -131,38 +131,38 @@ class Juego
 	def dibujarTableroA
 		case @posA
 		when 1
-		  @tableroA = "_ A _ _ _ _ _ _"
+		  @tableroA = "|_|A|_|_|_|_|_|_|"
 		when 2
-		  @tableroA = "_ _ A _ _ _ _ _"
+		  @tableroA = "|_|_|A|_|_|_|_|_|"
 		when 3
-		  @tableroA = "_ _ _ A _ _ _ _"
+		  @tableroA = "|_|_|_|A|_|_|_|_|"
 		when 4
-		  @tableroA = "_ _ _ _ A _ _ _"
+		  @tableroA = "|_|_|_|_|A|_|_|_|"
 		when 5
-		  @tableroA = "_ _ _ _ _ A _ _"
+		  @tableroA = "|_|_|_|_|_|A|_|_|"
 		when 6
-		  @tableroA = "_ _ _ _ _ _ A _"
+		  @tableroA = "|_|_|_|_|_|_|A|_|"
 		when 7
-		  @tableroA = "_ _ _ _ _ _ _ A"
+		  @tableroA = "|_|_|_|_|_|_|_|A|"
 		end
 	end
 
 	def dibujarTableroB
 		case @posB
 		when 1
-		  @tableroB = "_ B _ _ _ _ _ _"
+		  @tableroB = "|_|B|_|_|_|_|_|_|"
 		when 2
-		  @tableroB = "_ _ B _ _ _ _ _"
+		  @tableroB = "|_|_|B|_|_|_|_|_|"
 		when 3
-		  @tableroB = "_ _ _ B _ _ _ _"
+		  @tableroB = "|_|_|_|B|_|_|_|_|"
 		when 4
-		  @tableroB = "_ _ _ _ B _ _ _"
+		  @tableroB = "|_|_|_|_|B|_|_|_|"
 		when 5
-		  @tableroB = "_ _ _ _ _ B _ _"
+		  @tableroB = "|_|_|_|_|_|B|_|_|"
 		when 6
-		  @tableroB = "_ _ _ _ _ _ B _"
+		  @tableroB = "|_|_|_|_|_|_|B|_|"
 		when 7
-		  @tableroB = "_ _ _ _ _ _ _ B"
+		  @tableroB = "|_|_|_|_|_|_|_|B|"
 		end
 	end
 end
