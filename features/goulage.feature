@@ -15,10 +15,10 @@ Given Se abre el juego
 When Jugador A tira 5
 Then Jugador A esta en la posicion 5
 
-Scenario: Jugador A tira 6, Jugador A gano
-Given Se abre el juego
-When Jugador A tira 6
-Then Muestra el mensaje "Gano A"
+#Scenario: Jugador A tira 6, Jugador A gano
+#Given Se abre el juego
+#When Jugador A tira 6
+#Then Muestra el mensaje "Gano A"
 
 Scenario: Inicia el juego y muestra turno Jugador A
 Given Se abre el juego
@@ -45,6 +45,7 @@ When Jugador A tira 3
 When Jugador B tira 4
 Then Muestra el tableroA "_ _ _ A _ _ _"
 Then Muestra el tableroB "_ _ _ _ B _ _"
+
 
 
 

@@ -16,6 +16,7 @@ post '/dado' do
 	@posA = @@juego.posA
 	@posB = @@juego.posB
 	@estado = @@juego.estado
+	@valorDado = @@juego.valorDado
 	@tableroA= "_ _ _ A _ _ _"	
 	@tableroB= "_ _ _ _ B _ _"	
 
