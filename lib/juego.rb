@@ -7,13 +7,13 @@ class Juego
 		@proximo = 0
 
 		@valorDado = 0
-		@largoTablero = 6
+		@largoTablero = 7
 
 		@turno = "A"
 		@estado = "Juega A"
 
-		@tableroA = "A _ _ _ _ _ _"
-		@tableroB = "B _ _ _ _ _ _"
+		@tableroA = "A _ _ _ _ _ _ _"
+		@tableroB = "B _ _ _ _ _ _ _"
 
 	end
 
@@ -43,6 +43,10 @@ class Juego
 
 	def estado
 		@estado
+	end
+	
+	def valorDado
+		@valorDado
 	end
 
 	def turno
@@ -86,7 +90,8 @@ class Juego
 		@turno = "A"
 		@estado = "Juega A"
 	end 
-
+		dibujarTableroA
+		dibujarTableroB
 		validarGanador
 
 	end
@@ -122,4 +127,46 @@ class Juego
 			end
 		end
 	end
+
+	def dibujarTableroA
+		case @posA
+		when 1
+		  @tableroA = "_ A _ _ _ _ _ _"
+		when 2
+		  @tableroA = "_ _ A _ _ _ _ _"
+		when 3
+		  @tableroA = "_ _ _ A _ _ _ _"
+		when 4
+		  @tableroA = "_ _ _ _ A _ _ _"
+		when 5
+		  @tableroA = "_ _ _ _ _ A _ _"
+		when 6
+		  @tableroA = "_ _ _ _ _ _ A _"
+		when 7
+		  @tableroA = "_ _ _ _ _ _ _ A"
+		end
+	end
+
+	def dibujarTableroB
+		case @posB
+		when 1
+		  @tableroB = "_ B _ _ _ _ _ _"
+		when 2
+		  @tableroB = "_ _ B _ _ _ _ _"
+		when 3
+		  @tableroB = "_ _ _ B _ _ _ _"
+		when 4
+		  @tableroB = "_ _ _ _ B _ _ _"
+		when 5
+		  @tableroB = "_ _ _ _ _ B _ _"
+		when 6
+		  @tableroB = "_ _ _ _ _ _ B _"
+		when 7
+		  @tableroB = "_ _ _ _ _ _ _ B"
+		end
+	end
 end
+
+
+
+

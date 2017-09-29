@@ -11,10 +11,10 @@ describe "Juego" do
 
 	end
 
-	it "Si fuerzo un 6, dice Ganaste" do
+	it "Si fuerzo un 7, dice Ganaste" do
 
 		juego = Juego.new
-		juego.forzarDado 6
+		juego.forzarDado 7
 		juego.tirarDado
 		juego.estado.should == "Gano A"
 
@@ -45,16 +45,16 @@ describe "Juego" do
 
 	end
 
-	it "Si la posicion de A es mayo a 6, rebota" do
+	it "Si la posicion de A es mayor a 7, rebota" do
 
 		juego = Juego.new
-		juego.forzarDado 3
+		juego.forzarDado 4
 		juego.tirarDado
-		juego.forzarDado 1
+		juego.forzarDado 2
 		juego.tirarDado
 		juego.forzarDado 5
 		juego.tirarDado
-		juego.posA.should == 4
+		juego.posA.should == 5
 
 	end
 
