@@ -8,6 +8,10 @@ class Juego
 		@estado = "Juega A"
 	end
 
+	def pos
+		@posA
+	end
+
 	def posA
 		@posA
 	end
@@ -43,10 +47,10 @@ class Juego
 
 	def validarGanador
 		if @posA >= 6
-			@estado = "Gano A"
+			@estado = "Gano A - Ganaste"
 		else
 			if @posB >= 6
-				@estado = "Gano B"
+				@estado = "Gano B - Ganaste"
 			end
 		end
 	end
