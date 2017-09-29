@@ -24,9 +24,10 @@ class Juego
 			@pos += Random.rand 1..6
 		else
 			@pos += @proximo
-			if @pos >= 6
-					@estado = "Ganaste"
-				end
+		end
+		
+		if @pos >= 6
+			@estado = "Ganaste"
 		end
 	end
 

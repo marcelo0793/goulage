@@ -11,4 +11,13 @@ describe "Juego" do
 
 	end
 
+	it "Si fuerzo un 6, dice Ganaste" do
+
+		juego = Juego.new
+		juego.forzarDado 6
+		juego.tirarDado
+		juego.estado.should == "Ganaste"
+
+	end
+
 end
