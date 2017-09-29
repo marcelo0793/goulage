@@ -2,19 +2,20 @@ Feature: Goulage
 
 Scenario: Inicio de juego
 Given Se abre el juego
-Then Esta en la posicion 0
+Then Jugador A esta en la posicion 0
+Then Jugador B esta en la posicion 0
 
-Scenario: Tira 3, esta en pos 3
+Scenario: Jugador A tira 3, Jugador A esta en posicion 3
 Given Se abre el juego
-When Tira 3
-Then Esta en la posicion 3
+When Jugador A tira 3
+Then Jugador A esta en la posicion 3
 
-Scenario: Tira 5, esta en pos 5
+Scenario: Jugador A tira 5, Jugador A esta en posicion 5
 Given Se abre el juego
-When Tira 5
-Then Esta en la posicion 5
+When Jugador A tira 5
+Then Jugador A esta en la posicion 5
 
-Scenario: Tira 6, gano
+Scenario: Jugador A tira 6, Jugador 6 gano
 Given Se abre el juego
-When Tira 6
-Then Tiene el estado "Ganaste"
+When Jugador A tira 6
+Then Muestra el mensaje "Gano A"

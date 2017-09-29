@@ -3,15 +3,17 @@ require './lib/juego.rb'
 
 get '/' do
 	@@juego = Juego.new
-	@pos = @@juego.pos
-  erb :goulage
+	@posA = @@juego.posA
+	@posB = @@juego.posB
+  	erb :goulage
 end
 
 post '/dado' do
 	@@juego.tirarDado
-	@pos = @@juego.pos
+	@posA = @@juego.posA
+	@posB = @@juego.posB
 	@estado = @@juego.estado	
 
-  erb :goulage
+  	erb :goulage
 end
 

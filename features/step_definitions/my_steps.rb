@@ -1,19 +1,28 @@
 Given(/^Se abre el juego$/) do
-	  visit '/'
+  visit '/'
 end
 
-Then(/^Esta en la posicion (\d+)$/) do |pos|
-  last_response.body.should =~ /#{pos}/m
+Then(/^Jugador A esta en la posicion (\d+)$/) do |posicion|
+  @texto = "Jugador A está en la posición " + posicion
+  last_response.body.should =~ /#{@texto}/m
 end
 
-When(/^Tira (\d+)$/) do |numeroDado|
-	@@juego.forzarDado numeroDado.to_i
-	click_button( "tirarDado")
+Then(/^Jugador B esta en la posicion (\d+)$/) do |posicion|
+  @texto = "Jugador B está en la posición " + posicion
+  last_response.body.should =~ /#{@texto}/m
 end
 
-Then(/^Tiene el estado "(.*?)"$/) do |estado|
+When(/^Jugador A tira (\d+)$/) do |numeroDado|
+   @@juego.forzarDado numeroDado.to_i
+   click_button("tirarDado")
+end
+
+Then(/^Muestra el mensaje "(.*?)"$/) do |estado|
   last_response.body.should =~ /#{estado}/m
 end
+
+
+
 
 
 
