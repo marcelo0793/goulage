@@ -5,6 +5,7 @@ get '/' do
 	@@juego = Juego.new
 	@posA = @@juego.posA
 	@posB = @@juego.posB
+	@estado = @@juego.estado	
   	erb :goulage
 end
 
