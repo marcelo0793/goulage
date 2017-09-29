@@ -42,6 +42,7 @@ class Juego
 			@posA += @proximo
 		end
 		@turno = "B"
+		@estado = "Juega B"
 	else
 		if @proximo == 0
 			@posB += Random.rand 1..6
@@ -49,6 +50,7 @@ class Juego
 			@posB += @proximo
 		end
 		@turno = "A"
+		@estado = "Juega A"
 	end 
 
 		validarGanador
