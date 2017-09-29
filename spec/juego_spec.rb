@@ -7,7 +7,7 @@ describe "Juego" do
 		juego = Juego.new
 		juego.forzarDado 3
 		juego.tirarDado
-		juego.pos.should == 3
+		juego.posA.should == 3
 
 	end
 
@@ -16,7 +16,23 @@ describe "Juego" do
 		juego = Juego.new
 		juego.forzarDado 6
 		juego.tirarDado
-		juego.estado.should == "Ganaste"
+		juego.estado.should == "Gano A"
+
+	end
+
+	it "Si tiro un dado, sale un numero y es menor a 7" do
+
+		juego = Juego.new
+		juego.tirarDado
+		juego.posA.should < 7
+
+	end
+
+	it "Si tiro un dado, aumenta tambien la posicion de B" do
+
+		juego = Juego.new
+		juego.tirarDado
+		juego.posB.should_not == 0 
 
 	end
 

@@ -2,13 +2,18 @@
 class Juego
 
 	def initialize
-		@pos = 0
+		@posA = 0
+		@posB = 0
 		@proximo = 0
-		@estado = "Segui jugando"
+		@estado = "Juega A"
 	end
 
-	def pos
-		@pos
+	def posA
+		@posA
+	end
+
+	def posB
+		@posB
 	end
 
 	def estado
@@ -21,14 +26,28 @@ class Juego
 	
 	def tirarDado
 		if @proximo == 0
-			@pos += Random.rand 1..6
+			@posA += Random.rand 1..6
 		else
-			@pos += @proximo
+			@posA += @proximo
 		end
 		
-		if @pos >= 6
-			@estado = "Ganaste"
-		end
+		tirarDadoB
+
+		validarGanador
+
 	end
 
+	def tirarDadoB
+		@posB += Random.rand 1..6
+	end
+
+	def validarGanador
+		if @posA >= 6
+			@estado = "Gano A"
+		else
+			if @posB >= 6
+				@estado = "Gano B"
+			end
+		end
+	end
 end
