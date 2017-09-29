@@ -16,7 +16,7 @@ describe "Juego" do
 		juego = Juego.new
 		juego.forzarDado 6
 		juego.tirarDado
-		juego.estado.should == "Gano A"
+		juego.estado.should == "Gano A - Ganaste"
 
 	end
 
