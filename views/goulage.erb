@@ -1,14 +1,15 @@
-<h1 style="color:blue"> <%= @estado %><h1/>
+
+<h1 style="color:blue; text-align:center">The Goulage Game<h1/>
+<h2 style="color:blue; text-align:center">A vs B<h2/>
+<h3 style="color:blue; text-align:center">Objetivo: Llegar a la posición 7. Si te pasas, rebotas!<h3/>
+
 <hr>
-<h3>Jugador A está en la posición <%= @posA %><h1/>
-<h3>Jugador B está en la posición <%= @posB %><h1/>
+<h1 style="color:green"><%= @tableroA %></h1>
 <hr>
-<p style="color:green"><%= @tableroA %></p>
-<hr>
-<p style="color:red"><%= @tableroB %></p>
+<h1 style="color:red"><%= @tableroB %></h1>
 <hr>
 <form method="post" action="/dado">
-	<input type="submit" value="tirarDado"/>
+	<h2 style="color:lightblue"> <%= @estado %><h2/><input type="submit" value="tirarDado">
 </form>
-<h4> Salio el numero <%= @valorDado %><h1/>
+<h4>(Salio el numero: <%= @valorDado %>)<h1/>
 
