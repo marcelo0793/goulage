@@ -1,12 +1,14 @@
+<h1 style="color:blue"> <%= @estado %><h1/>
+<hr>
 <h3>Jugador A está en la posición <%= @posA %><h1/>
 <h3>Jugador B está en la posición <%= @posB %><h1/>
-
+<hr>
 <p style="color:green"><%= @tableroA %></p>
+<hr>
 <p style="color:red"><%= @tableroB %></p>
-
-<h1 style="color:blue"> <%= @estado %><h1/>
+<hr>
 <form method="post" action="/dado">
 	<input type="submit" value="tirarDado"/>
 </form>
-<h4> Salio <%= @valorDado %><h1/>
+<h4> Salio el numero <%= @valorDado %><h1/>
 

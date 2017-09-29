@@ -17,8 +17,8 @@ post '/dado' do
 	@posB = @@juego.posB
 	@estado = @@juego.estado
 	@valorDado = @@juego.valorDado
-	@tableroA= "_ _ _ A _ _ _"	
-	@tableroB= "_ _ _ _ B _ _"	
+	@tableroA= @@juego.tableroA
+	@tableroB= @@juego.tableroB	
 
   	erb :goulage
 end
